@@ -10,7 +10,7 @@ left: 50%;
 
 transform: translate(-50%, -50%);
 
-color: fffff;
+color: "white";
 
 }
 
@@ -58,9 +58,9 @@ opacity: 0.7;
 
 }
 
-background-color: #08AEEA;
 
-background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 24%, #0cb5c9 49%, #1b32c7 75%, #8f1b1b 100%);
+
+
 
 
 
