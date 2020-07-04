@@ -1,2 +1,1 @@
-# frtymn.github.io
-Fırat Yaman'ın Kişisel Web Sitesi
+# frtymn.githuh.io Fırat Yaman's Personel Web Site
