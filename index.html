@@ -1,22 +1,261 @@
 <!DOCTYPE html>
-<html lang="en-TR">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <link href="main.css" rel="stylesheet">
-<title>Fırat Yaman Personal Web Site</title>
-<link rel="icon" href="favicon.ico" type=image/x-icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fırat Yaman — Web and Android development</title>
+  <meta name="description" content="Personal site and portfolio of Fırat Yaman: web development, Android applications, and experiments with different technologies.">
+  <meta name="author" content="Fırat Yaman">
+  <link rel="canonical" href="https://frtymn.github.io/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Fırat Yaman">
+  <meta property="og:title" content="Fırat Yaman — Web and Android development">
+  <meta property="og:description" content="Personal site and portfolio: web development, Android applications, and experiments with different technologies.">
+  <meta property="og:url" content="https://frtymn.github.io/">
+  <meta property="og:image" content="https://frtymn.github.io/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Fırat Yaman — web development, Android applications, experiments">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preload" href="assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- Apply the saved theme before first paint to avoid a flash. -->
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Fırat Yaman",
+    "url": "https://frtymn.github.io/",
+    "sameAs": ["https://github.com/frtymn"]
+  }
+  </script>
 </head>
-<body id="backgroundBody">
-<div id="textBody">
-<h1 style=font-family:helvetica;>Fırat Yaman</h1>
-<p style="font-size:160%;">Web Design and Programming</p>
-<div> 
-<a href="https://bit.ly/3cY3EnG" class="fa fa-twitter" target="_blank" rel="noopener noreferrer"></a>
-<a href="https://bit.ly/37E4Njj" class="fa fa-facebook" target="_blank" rel="noopener noreferrer"></a>
-<a href="https://bit.ly/2zBDyZT" class="fa fa-github" target="_blank" rel="noopener noreferrer"></a>
-<a href="https://bit.ly/3fgXpN8" class="fa fa-youtube" target="_blank" rel="noopener noreferrer"></a>
-</div>
-</div>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="#home" aria-label="Fırat Yaman, back to top">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect width="32" height="32" rx="6" class="brand-mark-bg"/>
+          <path d="M8 23V9h7M8 16h5.5M18 9l3.5 6.5L25 9M21.5 15.5V23" class="brand-mark-fg"/>
+        </svg>
+        <span class="brand-name">Fırat Yaman</span>
+      </a>
+
+      <div class="nav-panel" id="nav-panel">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#technologies">Technologies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch to dark theme" hidden>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/></svg>
+        </button>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel" hidden>
+          <span class="menu-btn-label">Menu</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero container" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Web · Android · Experiments</p>
+        <h1 class="display" id="hero-title">Fırat Yaman</h1>
+        <p class="lead">I write software for the web, I'm interested in Android applications, and I use small projects to experiment with different technologies.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View projects</a>
+          <a class="btn btn-ghost" href="https://github.com/frtymn" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            GitHub<span class="visually-hidden"> profile (opens in a new tab)</span>
+          </a>
+        </div>
+      </div>
+
+      <figure class="terminal" aria-label="Terminal-style summary">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span>
+          <span class="terminal-title">~/frtymn</span>
+        </div>
+        <pre class="terminal-body"><code><span class="t-cmd"><span class="t-prompt" aria-hidden="true">$</span> whoami</span>
+<span class="t-out">fırat yaman</span>
+<span class="t-cmd"><span class="t-prompt" aria-hidden="true">$</span> ls interests/</span>
+<span class="t-out">web-development  android-apps  experiments</span>
+<span class="t-cmd"><span class="t-prompt" aria-hidden="true">$</span> git log --format=%as | tail -1</span>
+<span class="t-out">2020-06-16</span>
+<span class="t-ok"><span aria-hidden="true">✓</span> live at frtymn.github.io</span></code></pre>
+      </figure>
+    </section>
+
+    <!-- About -->
+    <section class="section container" id="about" aria-labelledby="about-title">
+      <div class="section-head">
+        <p class="eyebrow"><span class="eyebrow-index">01</span> About</p>
+        <h2 class="heading" id="about-title">Learning by building</h2>
+      </div>
+      <div class="about-grid">
+        <div class="prose">
+          <p>I'm Fırat Yaman. I'm interested in software development in general, and most of my attention goes to web development and Android applications.</p>
+          <p>I like experimenting with different technologies: picking something new, building a small thing with it, and keeping what turns out to be useful.</p>
+          <p>This site is a good example. It started in June 2020 as a single page with my name and a few social links, and it has now been rebuilt as a small, dependency-free portfolio that can grow as I publish more work.</p>
+        </div>
+        <dl class="rows">
+          <div class="row"><dt>Focus</dt><dd>Web development, Android applications</dd></div>
+          <div class="row"><dt>Approach</dt><dd>Experimenting with different technologies</dd></div>
+          <div class="row"><dt>On GitHub</dt><dd>Since 2020 as <a href="https://github.com/frtymn" target="_blank" rel="noopener noreferrer">@frtymn<span class="visually-hidden"> (opens in a new tab)</span></a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section container" id="projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <p class="eyebrow"><span class="eyebrow-index">02</span> Projects</p>
+        <h2 class="heading" id="projects-title">Selected work</h2>
+        <p class="section-intro">Public repositories from my GitHub profile. Curated entries are listed first; any other public repository is added automatically from the GitHub API.</p>
+      </div>
+
+      <!--
+        To add a project by hand, copy one <article class="card project"> block
+        and set data-repo to the repository name. Repositories already listed
+        here are skipped by the automatic GitHub list.
+      -->
+      <div class="project-grid" id="project-grid">
+        <article class="card project is-featured" data-repo="frtymn.github.io">
+          <div class="project-visual" aria-hidden="true">
+            <div class="pv-version">
+              <span class="pv-label">v1 · 2020</span>
+              <span class="pv-v1"><span class="pv-v1-name">Fırat Yaman</span><span class="pv-v1-dots"><i></i><i></i><i></i><i></i></span></span>
+            </div>
+            <span class="pv-arrow">→</span>
+            <div class="pv-version">
+              <span class="pv-label">v2 · 2026</span>
+              <span class="pv-v2"><i class="pv-bar pv-bar-lg"></i><i class="pv-bar"></i><i class="pv-bar pv-bar-sm"></i><span class="pv-cards"><i></i><i></i></span></span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="status"><span class="status-dot" aria-hidden="true"></span>Live on GitHub Pages</span>
+              <span class="project-date">Since 2020</span>
+            </div>
+            <h3 class="project-title">frtymn.github.io</h3>
+            <p class="project-desc">This website. First published in June 2020 as a one-page profile with social links; rebuilt as a responsive portfolio with light and dark themes, plain HTML, CSS and a small amount of JavaScript.</p>
+            <ul class="tags">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/frtymn/frtymn.github.io" target="_blank" rel="noopener noreferrer">Source<span class="visually-hidden"> code for frtymn.github.io (opens in a new tab)</span> <span aria-hidden="true">↗</span></a>
+              <a href="https://frtymn.github.io/">Live site<span class="visually-hidden">: frtymn.github.io</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card-inverted more-card" id="more-card">
+          <p class="eyebrow">More on GitHub</p>
+          <p class="more-text">New public repositories appear on my profile first.</p>
+          <a class="btn btn-inverse" href="https://github.com/frtymn?tab=repositories" target="_blank" rel="noopener noreferrer">Browse repositories<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+      <p class="projects-status" id="projects-status" role="status"></p>
+    </section>
+
+    <!-- Technologies -->
+    <section class="section container" id="technologies" aria-labelledby="tech-title">
+      <div class="section-head">
+        <p class="eyebrow"><span class="eyebrow-index">03</span> Technologies</p>
+        <h2 class="heading" id="tech-title">Tools and interests</h2>
+        <p class="section-intro">Only what is visible in my public work, plus the areas I'm exploring. No ratings or percentages.</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-group">
+          <h3 class="tech-title">Used in public projects</h3>
+          <dl class="rows">
+            <div class="row"><dt>HTML</dt><dd>Semantic markup for this site</dd></div>
+            <div class="row"><dt>CSS</dt><dd>Layout, responsive design, light and dark themes</dd></div>
+            <div class="row"><dt>JavaScript</dt><dd>Navigation, theme switching, GitHub API project list</dd></div>
+            <div class="row"><dt>Git &amp; GitHub</dt><dd>Version control and hosting via GitHub Pages</dd></div>
+          </dl>
+        </div>
+        <div class="tech-group">
+          <h3 class="tech-title">Areas of interest</h3>
+          <dl class="rows">
+            <div class="row"><dt>Web</dt><dd>Building and improving websites</dd></div>
+            <div class="row"><dt>Android</dt><dd>Android applications</dd></div>
+            <div class="row"><dt>Experiments</dt><dd>Trying out different languages, frameworks and tools</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section container" id="contact" aria-labelledby="contact-title">
+      <div class="section-head">
+        <p class="eyebrow"><span class="eyebrow-index">04</span> Contact</p>
+        <h2 class="heading" id="contact-title">Get in touch</h2>
+        <p class="section-intro">The best way to reach me is through GitHub. For feedback or problems with this site, open an issue on its repository.</p>
+      </div>
+      <ul class="contact-list">
+        <li>
+          <a class="contact-row" href="https://github.com/frtymn" target="_blank" rel="noopener noreferrer">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-handle">@frtymn</span>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+            <span class="visually-hidden">(opens in a new tab)</span>
+          </a>
+        </li>
+        <li>
+          <a class="contact-row" href="https://github.com/frtymn/frtymn.github.io/issues" target="_blank" rel="noopener noreferrer">
+            <span class="contact-label">About this site</span>
+            <span class="contact-handle">Open an issue</span>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+            <span class="visually-hidden">(opens in a new tab)</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">Fırat Yaman</p>
+      <nav class="footer-social" aria-label="Social profiles"><ul class="footer-social-list">
+        <li><a href="https://github.com/frtymn" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">
+          <svg class="icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        </a></li>
+      </ul></nav>
+      <p class="footer-copy">© 2020–<span id="year">2026</span> Fırat Yaman</p>
+      <a class="footer-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+</body>
 </html>
